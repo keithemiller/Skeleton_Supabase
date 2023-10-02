@@ -1,6 +1,21 @@
 <script>
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+
+  // This will reload the client side when the session expires
+  // Returns the client-side supabase object
+	export let data;
+	$: ({session, supabase} = data);
+	onMount(() => {
+		const {
+			data: { subscription },
+		} = supabase.auth.onAuthStateChange((event, _sesssion) => {
+			if (_session?.expires_at !== session?.expires_at) {
+				invalidate("supabase:auth")
+			}
+		})
+		return () => subscription.unsubscribe()
+	})
 </script>
 
 <!-- App Shell -->
