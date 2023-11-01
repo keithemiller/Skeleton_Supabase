@@ -1,6 +1,7 @@
 <script>
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
 
   // This will reload the client side when the session expires
   // Returns the client-side supabase object
@@ -9,7 +10,7 @@
 	onMount(() => {
 		const {
 			data: { subscription },
-		} = supabase.auth.onAuthStateChange((event, _sesssion) => {
+		} = supabase.auth.onAuthStateChange((event, _session) => {
 			if (_session?.expires_at !== session?.expires_at) {
 				invalidate("supabase:auth")
 			}

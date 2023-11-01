@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 // Initial dotenv to pull all variables in from .env file
 dotenv.config();
 
-function getEnvironmentVariable(environmentVariable): {
+function getEnvironmentVariable(environmentVariable) {
   const validEnvironmentVariable = process.env[environmentVariable];
   if (!validEnvironmentVariable){
     throw new Error(`Couldn't find environment variable: ${environmentVariable}`);
