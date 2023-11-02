@@ -27,7 +27,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">TopShelf</strong>
+				<strong class="text-xl uppercase">Skeleton Supabase App</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
