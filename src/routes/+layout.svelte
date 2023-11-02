@@ -30,11 +30,11 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
+					href="Login"
 					target="_blank"
 					rel="noreferrer"
 				>
-					GitHub
+					Login
 				</a>
 			</svelte:fragment>
 		</AppBar>
