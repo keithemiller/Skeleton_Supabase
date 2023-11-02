@@ -1,8 +1,11 @@
 <script>
+  // !! Commenting line below (+line 8) stops Error and renders
   import superForm from "sveltekit-superforms/client";
 
   export let data;
-  const { form, errors, enhance } = superForm(data.form);
+
+  // !! Commenting line below leads to "Ambiguous indirect export: default"
+  //const { form, errors, enhance } = superForm(data.form);
 </script>
 
 <div class="py-20">
@@ -13,20 +16,14 @@
     </div>
     <div class="card mt-6 w-full" padding="xl" size="md">
       <!-- Login Form -->
-      <form method="POST" class="flex flex-col space-y-6" use:enhance>
+      <form method="POST" class="flex flex-col space-y-6" >
         <label class="space-y-2" for="email">
           <span>Email</span>
-          <input type="email" name="email" class="input" bind:value={$form.email} />
-          {#if $errors.email}
-            <span class="block text-red-600 dark:text-red-500">{$errors.email}</span>
-          {/if}
+          <input type="email" name="email" class="input"  />
         </label>
         <label class="space-y-2" for="password">
           <span>Password</span>
-          <input type="password" name="password" class="input" bind:value={$form.password} />
-          {#if $errors.password}
-            <span class="block text-red-600 dark:text-red-500">{$errors.password}</span>
-          {/if}
+          <input type="password" name="password" class="input" />
         </label>
         <button type="submit" class="btn variant-filled w-full">Login</button>
         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
