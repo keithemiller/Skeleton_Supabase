@@ -2,6 +2,8 @@
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
+  import { page } from "$app/stores";
+  import { invalidate } from "$app/navigation";
 
   // This will reload the client side when the session expires
   // Returns the client-side supabase object
@@ -30,7 +32,7 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="Login"
+					href="/login"
 					target="_blank"
 					rel="noreferrer"
 				>
