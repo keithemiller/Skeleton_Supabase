@@ -10,6 +10,13 @@ const loginUserSchema = z.object({
 });
 
 export const load = async (event) => {
+
+  // Protects URL from being accessed if the user is logged in
+  const session = await event.locals.getSession();
+  if (session) {
+    throw redirect(302, "/");
+  }
+
   return {
     form: superValidate(loginUserSchema),
   };
