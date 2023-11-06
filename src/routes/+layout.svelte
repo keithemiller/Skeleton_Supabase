@@ -30,12 +30,19 @@
 				<strong class="text-xl uppercase">Skeleton Supabase App</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
+				{#if session}
+				<a href="/account">Account</a>
+				<form action="/logout" method="POST">
+            <button type="submit" class="btn">Sign out</button>
+        </form>
+				{:else}
 				<a
 					class="btn btn-sm variant-ghost-surface"
 					href="/login"
 				>
 					Login
 				</a>
+				{/if}
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
