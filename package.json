@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "seed": "node scripts/seed.js"
   },
   "devDependencies": {
     "@skeletonlabs/skeleton": "2.2.0",
@@ -15,6 +16,8 @@
     "@tailwindcss/forms": "0.5.6",
     "@tailwindcss/typography": "0.5.10",
     "autoprefixer": "10.4.16",
+    "detect-port": "^1.5.1",
+    "pg": "^8.11.3",
     "postcss": "8.4.31",
     "supabase": "^1.99.5",
     "svelte": "^4.0.5",
